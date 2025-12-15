@@ -137,6 +137,7 @@ export default function Page() {
 
   const showWorld = stage === "reveal" || stage === "zap" || stage === "orient" || stage === "question";
   const showChoices = stage === "question";
+  const showSprites = stage !== "void" && stage !== "presence";
 
   const onPick = (lane: Lane) => {
     setSelected(lane);
@@ -161,7 +162,7 @@ export default function Page() {
             >
               <WorldGlow />
               <Problems zapped={zapped} />
-              <AISprites active={stage !== "void" && stage !== "presence"} />
+              <AISprites active={showSprites} />
             </motion.div>
           )}
         </AnimatePresence>
