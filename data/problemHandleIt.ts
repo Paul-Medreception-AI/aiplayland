@@ -225,6 +225,14 @@ const LANE_SOLUTION_SECTIONS: Record<string, SolutionSectionConfig[]> = {
   ],
 };
 
+const HANDLE_IT_ALIAS_MAP: Record<string, string> = {
+  voicemail: "voicemail",
+  "voicemail-backlog": "voicemail",
+  "overwhelmed-by-ai": "ai-confusion",
+  "too-much-to-learn": "learning-overload",
+  "burnout-risk": "staff-burnout",
+};
+
 const PROBLEM_HANDLE_IT_CONTENT: Record<string, HandleItContent> = {
   "missed-calls": {
     ...BASE_CONTENT,
@@ -295,6 +303,152 @@ const PROBLEM_HANDLE_IT_CONTENT: Record<string, HandleItContent> = {
         description: "Voice analytics and CCaaS partners keep enterprise voicemail queues empty and audited.",
         solutionSlugs: [],
         externalLink: { label: "Explore enterprise deployments", href: "https://www.aiplaypark.com/business-operations" },
+      },
+    ],
+  },
+  "no-study-partner": {
+    ...BASE_CONTENT,
+    heroTitle: "What it looks like when self-study feels supported.",
+    heroDescription:
+      "This is the operating play for students who need a responsive co-pilot even when there isn’t a classmate available.",
+    responsePillars: [
+      {
+        title: "Accountability loops",
+        detail: "Check-ins happen automatically so momentum never disappears.",
+        metric: "Daily",
+      },
+      {
+        title: "Peer energy without peers",
+        detail: "AI mirrors the cadence of a real partner, day or night.",
+        metric: "24/7",
+      },
+      {
+        title: "Progress is visible",
+        detail: "Students see exactly how far they’ve come—which keeps them showing up.",
+        metric: "Transparent",
+      },
+    ],
+    flowSteps: [
+      {
+        label: "01 · Capture",
+        title: "Intent gets logged the moment motivation spikes",
+        copy: "Session goals, deadlines, and blockers are captured in seconds so nothing depends on memory or a friend texting back.",
+        highlights: ["Goal & deadline prompts", "Energy + mood check", "Instant session kickoff"],
+      },
+      {
+        label: "02 · Sense",
+        title: "Rhythm adapts to how the learner feels",
+        copy: "The system senses pace, confidence, and comprehension to adjust the plan like a thoughtful partner would.",
+        highlights: ["Adaptive pacing", "Comprehension spot checks", "Encouragement nudges"],
+      },
+      {
+        label: "03 · Resolve",
+        title: "Every session ends with a next step",
+        copy: "Action items, review prompts, and celebration notes ensure the student always knows what’s next and never feels alone.",
+        highlights: ["Auto-generated next steps", "Shareable progress recap", "Gentle reminders"],
+      },
+    ],
+    playbookSteps: [
+      { title: "1. Map the study landscape", body: "Import syllabi, assignments, and testing milestones to understand what success looks like." },
+      { title: "2. Design the rituals", body: "Set cadence, reminder style, and tone so support feels like a trusted partner rather than a nag." },
+      { title: "3. Load the collaboration kit", body: "Add flashcards, question banks, and accountability prompts that match the subject matter." },
+      { title: "4. Broadcast progress", body: "Send digest summaries to tutors, parents, or the learner themselves so everyone sees the wins." },
+    ],
+    solutionSections: [
+      {
+        id: "study-support",
+        label: "Study support pods",
+        eyebrow: "Learning",
+        description: "AIPlayPark’s learning pods create a structured, always-on study buddy.",
+        solutionSlugs: [],
+        externalLink: { label: "See learning flows", href: "https://www.aiplaypark.com/personal-learning" },
+      },
+      {
+        id: "mentor-benches",
+        label: "Mentor benches",
+        eyebrow: "Coaching",
+        description: "Counselors and tutors get clean visibility into effort and obstacles so they can intervene quickly.",
+        solutionSlugs: [],
+      },
+      {
+        id: "family-dashboards",
+        label: "Family dashboards",
+        eyebrow: "Support circle",
+        description: "Parents see steady progress updates, removing the pressure to interrogate or nag.",
+        solutionSlugs: [],
+      },
+    ],
+  },
+  "test-anxiety": {
+    ...BASE_CONTENT,
+    heroTitle: "What it looks like when preparation replaces panic.",
+    heroDescription:
+      "This is the operating play for students who trade late-night spirals for adaptive, confidence-building reps. Exams still come. They just don’t feel like cliff dives.",
+    responsePillars: [
+      {
+        title: "Confidence built every session",
+        detail: "Each study block ends with proof of progress.",
+        metric: "Daily",
+      },
+      {
+        title: "Gaps surfaced instantly",
+        detail: "Weak spots are detected before cram week.",
+        metric: "≤60s",
+      },
+      {
+        title: "Calm on exam day",
+        detail: "Warmups mimic the real test so nerves drop.",
+        metric: "1.7× calmer",
+      },
+    ],
+    flowSteps: [
+      {
+        label: "01 · Capture",
+        title: "Signals of stress are caught early",
+        copy: "Calendar spikes, missed checkpoints, and frantic messages trigger a calm intervention before panic locks in.",
+        highlights: ["Mood + workload check-ins", "Adaptive study prompts", "Guardian notifications"],
+      },
+      {
+        label: "02 · Sense",
+        title: "Gaps and energy levels get profiled",
+        copy: "AI grades readiness by topic, time of day, and focus so each session targets the next best rep.",
+        highlights: ["Topic mastery scoring", "Focus/energy sensing", "Smart pacing recommendations"],
+      },
+      {
+        label: "03 · Resolve",
+        title: "Practice mirrors the real thing",
+        copy: "Students run short, adaptive drills with immediate feedback and encouragement—no guessing if they’re ready.",
+        highlights: ["Micro-assessments", "Positive coaching scripts", "Shareable progress trail"],
+      },
+    ],
+    playbookSteps: [
+      { title: "1. Map the stress profile", body: "Review recent grades, upcoming exams, and personal constraints to understand why anxiety spikes." },
+      { title: "2. Tune the ritual", body: "Set daily check-ins, session length, and reward structure so the cadence feels sustainable." },
+      { title: "3. Load smart practice", body: "Import curricula, past exams, and flashcards so the AI drills on real material." },
+      { title: "4. Report calm signals", body: "Dashboards show mastery, streaks, and mindset notes for the student, parents, or coaches." },
+    ],
+    solutionSections: [
+      {
+        id: "study-support",
+        label: "Study support pods",
+        eyebrow: "Learning",
+        description: "Adaptive nudgers keep students on track with warm accountability and real-time adjustments.",
+        solutionSlugs: [],
+        externalLink: { label: "See learning flows", href: "https://www.aiplaypark.com/personal-learning" },
+      },
+      {
+        id: "wellness-coaches",
+        label: "Wellness coaches",
+        eyebrow: "Care network",
+        description: "Guidance counselors and therapists get structured updates instead of SOS texts.",
+        solutionSlugs: [],
+      },
+      {
+        id: "family-dashboards",
+        label: "Family dashboards",
+        eyebrow: "Support circle",
+        description: "Parents see readiness signals without hovering, so they can encourage—not interrogate.",
+        solutionSlugs: [],
       },
     ],
   },
@@ -1101,8 +1255,10 @@ const PROBLEM_HANDLE_IT_CONTENT: Record<string, HandleItContent> = {
 };
 
 export function getHandleItContent(slug: string, label: string, lane?: string): HandleItContent {
-  if (PROBLEM_HANDLE_IT_CONTENT[slug]) {
-    return PROBLEM_HANDLE_IT_CONTENT[slug];
+  const safeSlug = (slug ?? "").toLowerCase();
+  const resolvedSlug = HANDLE_IT_ALIAS_MAP[safeSlug] ?? safeSlug;
+  if (PROBLEM_HANDLE_IT_CONTENT[resolvedSlug]) {
+    return PROBLEM_HANDLE_IT_CONTENT[resolvedSlug];
   }
 
   const laneSections = (lane && LANE_SOLUTION_SECTIONS[lane]) || LANE_SOLUTION_SECTIONS.business || BASE_CONTENT.solutionSections;
